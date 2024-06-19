@@ -4,14 +4,10 @@
 \alias{GTEx_Summary}
 \title{GTEx Summary Function}
 \usage{
-GTEx_Summary(SNP, Gene, Tissue)
+GTEx_Summary(S_G_T_Matrix)
 }
 \arguments{
-\item{SNP}{Single Nucleotide polymorphism or variant}
-
-\item{Gene}{Gene Of Interest in the format ENSG00000182179.12}
-
-\item{Tissue}{The Tissue of Interest as per GTEx Portal}
+\item{S_G_T_Matrix}{A dataframe in the format of SNP GENE TISSUE to be provides}
 }
 \value{
 Summary Statistics of the SNP,Gene and Tissue
@@ -20,5 +16,6 @@ Summary Statistics of the SNP,Gene and Tissue
 A function in R that retrieves a summary of SNP-gene-tissue associations from the Genotype-Tissue Expression GTEx dataset.
 }
 \examples{
-GTEx_Summary(SNP = "chr3_40_G_T_b38", Gene="ENSG00000182179.12", Tissue="Whole_Blood");
+S_G_T_Matrix <- data.frame(SNP = c("chr3_49771630" , "chr3_49772408" , "chr3_49773528" , "chr3_49773614" , "chr3_49773845") , Gene = c("ENSG00000182179.12" , "ENSG00000182179.12" ,"ENSG00000182179.12" , "ENSG00000182179.12" ,"ENSG00000182179.12") , Tissue = c("Whole_Blood","Lung","Liver","Pancreas","Ovary"))
+GTEx_Summary(S_G_T_Matrix)
 }

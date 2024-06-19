@@ -1,17 +1,20 @@
 #' GTEx Summary Function
 #'
 #' A function in R that retrieves a summary of SNP-gene-tissue associations from the Genotype-Tissue Expression GTEx dataset.
-#' @param SNP Single Nucleotide polymorphism or variant
-#' @param Gene Gene Of Interest in the format ENSG00000182179.12
-#' @param Tissue The Tissue of Interest as per GTEx Portal
+#' @param S_G_T_Matrix  A dataframe in the format of SNP GENE TISSUE to be provides
 #' @return Summary Statistics of the SNP,Gene and Tissue
 #' @examples 
-#' GTEx_Summary(SNP = "chr3_40_G_T_b38", Gene="ENSG00000182179.12", Tissue="Whole_Blood");
+#' S_G_T_Matrix <- data.frame(SNP = c("chr3_49771630" , "chr3_49772408" , "chr3_49773528" , "chr3_49773614" , "chr3_49773845") , Gene = c("ENSG00000182179.12" , "ENSG00000182179.12" ,"ENSG00000182179.12" , "ENSG00000182179.12" ,"ENSG00000182179.12") , Tissue = c("Whole_Blood","Lung","Liver","Pancreas","Ovary"))
+#' GTEx_Summary(S_G_T_Matrix)
 #' @export
-GTEx_Summary <- function(SNP,Gene,Tissue)
+GTEx_Summary <- function(S_G_T_Matrix)
 {
-  ex = paste0("k_gtex_fast(V='",SNP,"'" , ",G='" , Gene , "'," , "Tissue='",Tissue,"')")
-  return(RSeval(expr = ex , c = connec))
+  base_url <- "http://172.15.1.20:8000"
+  
+  S_G_T_Matrix <- toJSON(S_G_T_Matrix)
+  res <- GET(url = paste0(base_url, "/K_gTExSumStats"), query = list(S_G_T_Matrix = S_G_T_Matrix))
+  aa <- content(res, as ="text" , encoding = "UTF-8")
+  return(fromJSON(fromJSON(aa)))
 }
 
 #' Gtex_variance_finder Function
@@ -21,12 +24,16 @@ GTEx_Summary <- function(SNP,Gene,Tissue)
 #' @param Tissue The Tissue of Interest as per GTEx Portal
 #' @return Summary Statistics of the SNP,Gene and Tissue
 #' @examples 
-#' Gtex_variance_finder <- function(Gene = "ENSG00000182179.12 " , Tissue = "Whole_Blood")
+#' Gtex_variance_finder(Gene = "ENSG00000182179.12 " , Tissue = "Whole_Blood")
 #' @export
 Gtex_variance_finder <- function(Gene,Tissue)
 {
-  ex = paste0("Gtex_variance_finder(Gene='" , Gene , "'," , "Tissue='",Tissue,"')")
-  return(RSeval(expr = ex , c = connec))
+  base_url <- "http://172.15.1.20:8000"
+  
+  xx <- toJSON(c(Gene,Tissue))
+  res <- GET(url = paste0(base_url, "/Gtex_variance_finder"), query = list(gene_tissue = xx))
+  aa <- content(res, as ="text" , encoding = "UTF-8")
+  return(fromJSON(aa))
 }
 
 #' Gtex_Sample_Finder Function
@@ -39,7 +46,10 @@ Gtex_variance_finder <- function(Gene,Tissue)
 #' @export
 Gtex_Sample_Finder <- function(Tissue)
 {
-  ex = paste0("Gtex_Sample_Finder(Tissue='",Tissue,"')")
-  return(RSeval(expr = ex , c = connec))
+  base_url <- "http://172.15.1.20:8000"
+  
+  res <- GET(url = paste0(base_url, "/Gtex_Sample_Finder"), query = list(Tissue = Tissue))
+  aa <- content(res, as ="text" , encoding = "UTF-8")
+  return(fromJSON(aa))
 }
 

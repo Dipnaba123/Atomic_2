@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: Diptanil Biswas <db2@nibmg.ac.in>
 Maintainer: Dr. Samsiddhi Bhattacharjee <sb1@nibmg.ac.in>
 Description: ATOMIC( Analytic Tools for Omics Mining and Integrative Computation )
-Depends: R (>= 4.0.0)
+Depends: R (>= 3.5.0)
 Imports: 
     dplyr,
     tidyr,

@@ -13,7 +13,7 @@ snpToGENCODE(rsids)
 Summary Statistics of the SNP,Gene and Tissue
 }
 \description{
-A function in R that retrieves a summary of SNP-gene-tissue associations from the Genotype-Tissue Expression GTEx dataset.
+Retrieve GENCODE information for a set of SNPs from the HAPLOREG database.
 }
 \examples{
 snpToGENCODE(rsids <- "rs10");

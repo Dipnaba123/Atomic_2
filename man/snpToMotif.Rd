@@ -7,13 +7,13 @@
 snpToMotif(rsid)
 }
 \arguments{
-\item{rsids}{A vector of rsids}
+\item{rsid}{genotypic variant as rsid}
 }
 \value{
 Summary Statistics of the SNP,Gene and Tissue
 }
 \description{
-A function in R that retrieves a summary of SNP-gene-tissue associations from the Genotype-Tissue Expression GTEx dataset.
+Retrieve MOTIF information for a set of SNPs from the HAPLOREG database.
 }
 \examples{
 snpToMotif(rsid = "rs10")

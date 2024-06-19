@@ -13,9 +13,9 @@ snpToREFSEQ(rsids)
 Summary Statistics of the SNP,Gene and Tissue
 }
 \description{
-A function in R that retrieves a summary of SNP-gene-tissue associations from the Genotype-Tissue Expression GTEx dataset.
+Retrieve GENCODE information for a set of SNPs from the HAPLOREG database.
 }
 \examples{
 snpToREFSEQ(rsids = "rs10")
-snpToREFSEQ(rsids = c("rs10","rs3","rs4","rs10047249"))
+snpToREFSEQ(rsids = c("rs10","rs3","rs4","rs1"))
 }

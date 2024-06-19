@@ -7,14 +7,14 @@
 snpToHISTONEPEAKS(rsid)
 }
 \arguments{
-\item{rsid}{genotypic variant as an rsid}
+\item{rsid}{genotypic variant as rsid}
 }
 \value{
 Summary Statistics of the SNP,Gene and Tissue
 }
 \description{
-A function in R that retrieves a summary of SNP-gene-tissue associations from the Genotype-Tissue Expression GTEx dataset.
+Retrieve HISTONEPEAKS information for a set of SNPs from the HAPLOREG database.
 }
 \examples{
-snpToHISTONEPEAKS(rsid <- "rs10");
+snpToHISTONEPEAKS(rsid <- "rs3");
 }

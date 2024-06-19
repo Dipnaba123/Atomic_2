@@ -47,7 +47,6 @@ rsidToGRCh38 <- function(rsids)
 #' @param rsids A vector of rsids
 #' @return Summary Statistics of the SNP,Gene and Tissue
 #' @examples
-#' variant_matrix_2 <- data.frame(Chromosome=c("chr1","chr1","chr1","chr1","chr1"), Position=c(13526,13550,14451,14469,14470))
 #' variant_matrix_2 <- data.frame(Chromosome=c("chr1","chr1","chr1","chr1","chr1"),Position=c(10399,10420,10437,10438,10440))
 #' SNP_To_Allele_1KGP(variant_matrix = variant_matrix_2)
 #' @export

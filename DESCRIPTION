@@ -1,0 +1,5 @@
+Package: ATOMIC
+Type: Package
+Title: Analytic Tools for Omics Mining and Integrative Computation
+Version: 0.0.1.0
+RoxygenNote: 7.3.1

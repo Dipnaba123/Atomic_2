@@ -15,7 +15,7 @@ To install ATOMIC from GitHub, you'll need to use the remotes package. If you ha
 install.packages("remotes")
 #Once you have remotes installed, you can install ATOMIC by running the following command:
 
-remotes::install_github("sb-genome/ATOMIC")
+remotes::install_github("Dipnaba123/Atomic_2")
 ```
 # Usage
 Here's a quick example to get you started with using ATOMIC:

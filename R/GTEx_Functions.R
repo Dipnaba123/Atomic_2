@@ -72,7 +72,7 @@ snp_gtex <- function(chr , start, end)
   base_url <- "http://172.15.1.20:8000"
   
   xx <- toJSON(c(chr,start,end))
-  res <- GET(url = paste0(base_url, "/snp_gtex"), query = list(cumulative = xx))
+  res <- GET(url = paste0(base_url, "/snp_gtex"), query = list(chr_start_end = xx))
   aa <- content(res, as ="text" , encoding = "UTF-8")
   return(fromJSON(aa))
 }
@@ -95,7 +95,7 @@ snp_1kgp <- function(chr , start , end)
   base_url <- "http://172.15.1.20:8000"
   
   xx <- toJSON(c(chr,start,end))
-  res <- GET(url = paste0(base_url, "/snp_1kgp"), query = list(cumulative = xx))
+  res <- GET(url = paste0(base_url, "/snp_1kgp"), query = list(chr_start_end = xx))
   aa <- content(res, as ="text" , encoding = "UTF-8")
   return(fromJSON(aa))
 }
@@ -117,7 +117,7 @@ snp_gtex_signif <- function(gene = "ENSG00000225630" , tissue= "Liver")
   base_url <- "http://172.15.1.20:8000"
   
   xx <- toJSON(c(gene,tissue))
-  res <- GET(url = paste0(base_url, "/snp_gtex_signif"), query = list(cumulative = xx))
+  res <- GET(url = paste0(base_url, "/snp_gtex_signif"), query = list(gene_tissue = xx))
   aa <- content(res, as ="text" , encoding = "UTF-8")
   return(fromJSON(aa))
 }

@@ -7,10 +7,12 @@
 snp_gtex_signif(gene = "ENSG00000225630", tissue = "Liver")
 }
 \arguments{
-\item{Tissue}{The Tissue of Interest as per GTEx Portal}
+\item{gene}{The Tissue of Interest as per GTEx Portal}
+
+\item{tissue}{The Tissue of Interest as per GTEx Portal}
 }
 \value{
-Summary Statistics of the SNP,Gene and Tissue
+set of snps
 }
 \description{
 A function in R that retrieves a summary of SNP-gene-tissue associations from the Genotype-Tissue Expression GTEx dataset.

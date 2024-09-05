@@ -16,5 +16,5 @@ Summary Statistics of the SNP,Gene and Tissue
 A function in R that retrieves a summary of SNP-gene-tissue associations from the Genotype-Tissue Expression GTEx dataset.
 }
 \examples{
-Gtex_Sample_Finder(Tissue="Whole_Blood");
+Gtex_Sample_Finder(Tissue="Whole_Blood")
 }

@@ -42,7 +42,7 @@ Gtex_variance_finder <- function(Gene,Tissue)
 #' @param Tissue The Tissue of Interest as per GTEx Portal
 #' @return Summary Statistics of the SNP,Gene and Tissue
 #' @examples 
-#' Gtex_Sample_Finder(Tissue="Whole_Blood");
+#' Gtex_Sample_Finder(Tissue="Whole_Blood")
 #' @export
 Gtex_Sample_Finder <- function(Tissue)
 {
@@ -60,8 +60,10 @@ Gtex_Sample_Finder <- function(Tissue)
 #' Gtex_Sample_Finder Function
 #'
 #' A function in R that retrieves a summary of SNP-gene-tissue associations from the Genotype-Tissue Expression GTEx dataset.
-#' @param Tissue The Tissue of Interest as per GTEx Portal
-#' @return Summary Statistics of the SNP,Gene and Tissue
+#' @param chr The Tissue of Interest as per GTEx Portal
+#' @param start The Tissue of Interest as per GTEx Portal
+#' @param end The Tissue of Interest as per GTEx Portal
+#' @return set of snps
 #' @examples 
 #' snp_gtex(chr = 1, start = 13526, end = 14000)
 #' @export
@@ -81,8 +83,10 @@ snp_gtex <- function(chr , start, end)
 #' snp_1kgp Function
 #'
 #' A function in R that retrieves a summary of SNP-gene-tissue associations from the Genotype-Tissue Expression GTEx dataset.
-#' @param Tissue The Tissue of Interest as per GTEx Portal
-#' @return Summary Statistics of the SNP,Gene and Tissue
+#' @param chr The Tissue of Interest as per GTEx Portal
+#' @param start The Tissue of Interest as per GTEx Portal
+#' @param end The Tissue of Interest as per GTEx Portal
+#' @return set of snps
 #' @examples 
 #' snp_1kgp(chr = 1 , start = 13500 , end = 14000)
 #' @export
@@ -102,8 +106,9 @@ snp_1kgp <- function(chr , start , end)
 #' snp_gtex_signif Function
 #'
 #' A function in R that retrieves a summary of SNP-gene-tissue associations from the Genotype-Tissue Expression GTEx dataset.
-#' @param Tissue The Tissue of Interest as per GTEx Portal
-#' @return Summary Statistics of the SNP,Gene and Tissue
+#' @param gene The Tissue of Interest as per GTEx Portal
+#' @param tissue The Tissue of Interest as per GTEx Portal
+#' @return set of snps
 #' @examples 
 #' snp_gtex_signif(gene = "ENSG00000225630" , tissue= "Liver")
 #' @export

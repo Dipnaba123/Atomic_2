@@ -53,3 +53,66 @@ Gtex_Sample_Finder <- function(Tissue)
   return(fromJSON(aa))
 }
 
+
+
+
+
+#' Gtex_Sample_Finder Function
+#'
+#' A function in R that retrieves a summary of SNP-gene-tissue associations from the Genotype-Tissue Expression GTEx dataset.
+#' @param Tissue The Tissue of Interest as per GTEx Portal
+#' @return Summary Statistics of the SNP,Gene and Tissue
+#' @examples 
+#' snp_gtex(chr = 1, start = 13526, end = 14000)
+#' @export
+snp_gtex <- function(chr , start, end)
+{
+  base_url <- "http://172.15.1.20:8000"
+  
+  xx <- toJSON(c(chr,start,end))
+  res <- GET(url = paste0(base_url, "/snp_gtex"), query = list(chr_start_end = xx))
+  aa <- content(res, as ="text" , encoding = "UTF-8")
+  return(fromJSON(aa))
+}
+
+
+
+
+#' snp_1kgp Function
+#'
+#' A function in R that retrieves a summary of SNP-gene-tissue associations from the Genotype-Tissue Expression GTEx dataset.
+#' @param Tissue The Tissue of Interest as per GTEx Portal
+#' @return Summary Statistics of the SNP,Gene and Tissue
+#' @examples 
+#' snp_1kgp(chr = 1 , start = 13500 , end = 14000)
+#' @export
+snp_1kgp <- function(chr , start , end)
+{
+  base_url <- "http://172.15.1.20:8000"
+  
+  xx <- toJSON(c(chr,start,end))
+  res <- GET(url = paste0(base_url, "/snp_1kgp"), query = list(chr_start_end = xx))
+  aa <- content(res, as ="text" , encoding = "UTF-8")
+  return(fromJSON(aa))
+}
+
+
+
+
+#' snp_gtex_signif Function
+#'
+#' A function in R that retrieves a summary of SNP-gene-tissue associations from the Genotype-Tissue Expression GTEx dataset.
+#' @param Tissue The Tissue of Interest as per GTEx Portal
+#' @return Summary Statistics of the SNP,Gene and Tissue
+#' @examples 
+#' snp_gtex_signif(gene = "ENSG00000225630" , tissue= "Liver")
+#' @export
+snp_gtex_signif <- function(gene = "ENSG00000225630" , tissue= "Liver")
+{
+  base_url <- "http://172.15.1.20:8000"
+  
+  xx <- toJSON(c(gene,tissue))
+  res <- GET(url = paste0(base_url, "/snp_gtex_signif"), query = list(gene_tissue = xx))
+  aa <- content(res, as ="text" , encoding = "UTF-8")
+  return(fromJSON(aa))
+}
